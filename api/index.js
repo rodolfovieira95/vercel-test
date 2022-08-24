@@ -15,11 +15,11 @@ import {
   SESSION_SECRET,
   TWITCH_CLIENT_ID,
   TWITCH_SECRET,
-} from "../src/constants";
-import { initializeRoutes } from "../src/routes";
-import resolvers from "../src/graphql/resolvers";
-import typeDefs from "../src/graphql/schema";
-import { context } from "../src/graphql/context";
+} from "./constants";
+import { initializeRoutes } from "./routes";
+import resolvers from "./graphql/resolvers";
+import typeDefs from "./graphql/schema";
+import { context } from "./graphql/context";
 import cors from "cors";
 
 const app = express();
