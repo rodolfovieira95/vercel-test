@@ -32,7 +32,7 @@ async function startApolloServer() {
     production: {
       ssl: true,
       port: 443,
-      hostname: "https://stream-control-api.vercel.app/",
+      hostname: "https://vercel-test-ten-ashen.vercel.app/",
     },
     development: { ssl: true, port: 443, hostname: "localhost" },
   };
@@ -49,14 +49,14 @@ async function startApolloServer() {
     plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })],
   });
   await server.start();
-  const corsOptions = {
-    origin: "https://stream-control-api.vercel.app/",
-    credentials: true,
-  };
+  // const corsOptions = {
+  //   origin: "https://vercel-test-ten-ashen.vercel.app/",
+  //   credentials: true,
+  // };
 
   const app = express();
   app.use(cors());
-  server.applyMiddleware({ app, cors: corsOptions, path: "/graphql" });
+  server.applyMiddleware({ app, path: "/graphql" });
 
   // Create the HTTPS or HTTP server, per configuration
   let httpServer;
